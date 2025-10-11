@@ -14,8 +14,8 @@ document.getElementById('loginButton').addEventListener('click', function (e) {
     mobileNumberValueConverted === mobileNumber &&
     pinNumberValueConverted === pinNumber
   ) {
-    window.location.href="./home.html"
-  }else{
-    alert('Invalid Value')
+    window.location.href = './home.html';
+  } else {
+    alert('Invalid Value');
   }
 });
