@@ -24,15 +24,19 @@
       referrerpolicy="no-referrer"
     />
   </head>
-  <body class="bg-[#F4F5F7] h-full">
+  <body class="bg-[#F4F5F7] min-h-screen">
     <div class="max-w-lg mx-auto bg-white rounded-b-2xl">
+      <!-- Header Section -->
+
       <div
         class="min-h-[50px] flex justify-between items-center border-b-1 border-gray-400 p-3 bg-white"
       >
         <div class="flex items-center">
           <img class="h-[50px]" src="./assets/Group.png" alt="" />
           <div class="ml-3">
-            <h2 class="font-bold">$<span id="available-balance">45000</span></h2>
+            <h2 class="font-bold">
+              $<span id="available-balance">45000</span>
+            </h2>
             <p class="text-[#08080880]">Available Balance</p>
           </div>
         </div>
@@ -46,6 +50,8 @@
         </div>
       </div>
 
+      <!-- Welcome Text -->
+
       <div class="mt-8 px-5">
         <h1 class="text-2xl font-bold">🔥 Welcome to Payooo!</h1>
         <p class="text-[#08080880] mt-4">
@@ -54,39 +60,43 @@
         </p>
       </div>
 
+      <!-- All Button -->
+
       <div class="mt-8 grid grid-cols-3 gap-2.5 min-h-[200px] px-5 pb-5">
         <div
-          class="border-1 border-gray-300 p-7 rounded-xl text-[#080808b3] hover:cursor-pointer"
+          id="addMoneyBtn"
+          class="border-1 border-gray-300 p-7 rounded-xl text-[#080808b3] hover:cursor-pointer hover:scale-104 transition-transform duration-300 hover:bg-green-100"
         >
           <img class="mx-auto" src="./assets/wallet1.png" alt="" />
           <h2 class="mt-2 text-center">Add Money</h2>
         </div>
         <div
-          class="border-1 border-gray-300 p-7 rounded-xl text-[#080808b3] hover:cursor-pointer"
+          id="cashOutBtn"
+          class="border-1 border-gray-300 p-7 rounded-xl text-[#080808b3] hover:cursor-pointer hover:scale-104 transition-transform duration-300 hover:bg-green-100"
         >
           <img class="mx-auto" src="./assets/send1.png" alt="" />
           <h2 class="mt-2 text-center">Cash Out</h2>
         </div>
         <div
-          class="border-1 border-gray-300 p-4 flex flex-col justify-center items-center rounded-xl text-[#080808b3] hover:cursor-pointer"
+          class="border-1 border-gray-300 p-4 flex flex-col justify-center items-center rounded-xl text-[#080808b3] hover:cursor-pointer hover:scale-104 transition-transform duration-300 hover:bg-green-100"
         >
           <img class="mx-auto" src="./assets/money1.png" alt="" />
           <h2 class="mt-2 text-center">Transfer Money</h2>
         </div>
         <div
-          class="border-1 border-gray-300 p-7 rounded-xl text-[#080808b3] hover:cursor-pointer"
+          class="border-1 border-gray-300 p-7 rounded-xl text-[#080808b3] hover:cursor-pointer hover:scale-104 transition-transform duration-300 hover:bg-green-100"
         >
           <img class="mx-auto" src="./assets/bonus1.png" alt="" />
           <h2 class="mt-2 text-center">Get Bonus</h2>
         </div>
         <div
-          class="border-1 border-gray-300 p-7 rounded-xl text-[#080808b3] hover:cursor-pointer"
+          class="border-1 border-gray-300 p-7 rounded-xl text-[#080808b3] hover:cursor-pointer hover:scale-104 transition-transform duration-300 hover:bg-green-100"
         >
           <img class="mx-auto" src="./assets/purse1.png" alt="" />
           <h2 class="mt-2 text-center">Pay Bill</h2>
         </div>
         <div
-          class="border-1 border-gray-300 p-7 rounded-xl text-[#080808b3] hover:cursor-pointer"
+          class="border-1 border-gray-300 p-7 rounded-xl text-[#080808b3] hover:cursor-pointer hover:scale-104 transition-transform duration-300 hover:bg-green-100"
         >
           <img class="mx-auto" src="./assets/transaction1.png" alt="" />
           <h2 class="mt-2 text-center">Transactions</h2>
@@ -94,7 +104,234 @@
       </div>
     </div>
 
-    <div class="all-form-section max-w-lg mx-auto">
+    <!-- Add Money -->
+
+    <div
+      id="addMoneySection"
+      class="all-form-section max-w-lg mx-auto pb-8"
+      style="display: none"
+    >
+      <h1 class="text-[#080808b3] font-semibold text-xl mt-7 mb-4">
+        Add Money
+      </h1>
+      <form action="#" class="bg-white rounded-2xl p-8">
+        <div>
+          <h1 class="font-semibold text-[#080808b3]">Select A Bank</h1>
+          <select
+            id="bank"
+            class="select rounded-3xl w-full text-gray-500 mt-3 h-12.5 pl-6 bg-[#F4F5F7]"
+          >
+            <option disabled selected>Select Bank</option>
+            <option>Dutch Bangla Bank Limited</option>
+            <option>Islamic Bank Limited</option>
+            <option>Jamuna Bank Limited</option>
+            <option>IFIC Bank Limited</option>
+          </select>
+        </div>
+
+        <div class="mt-5">
+          <label class="font-semibold text-[#080808b3]" for="">
+            Bank Account Number</label
+          >
+          <br />
+          <input
+            id="account-number"
+            type="text"
+            placeholder="Enter 11 digit account number"
+            class="input bg-[#F4F5F7] mt-3 rounded-3xl w-full p-6"
+          />
+        </div>
+
+        <div class="mt-5">
+          <label class="font-semibold text-[#080808b3]" for="">
+            Amount to Add</label
+          >
+          <br />
+          <input
+            id="add-amount"
+            type="text"
+            placeholder="Add Amount to withdraw"
+            class="input bg-[#F4F5F7] mt-3 rounded-3xl w-full p-6"
+          />
+        </div>
+
+        <div class="mt-5">
+          <label class="font-semibold text-[#080808b3]" for="">
+            Pin Number</label
+          >
+          <br />
+          <input
+            id="add-pin"
+            type="text"
+            placeholder="Enter 4 digit pin number"
+            class="input bg-[#F4F5F7] mt-3 rounded-3xl w-full p-6"
+          />
+        </div>
+
+        <button
+          type="button"
+          id="add-money-btn"
+          class="btn bg-[#0874F2] mt-5 w-full text-white rounded-3xl py-6 text-[17px]"
+        >
+          Add Money
+        </button>
+      </form>
+    </div>
+
+    <!-- Cash Out -->
+
+    <div
+      id="cashOutSection"
+      class="all-form-section max-w-lg mx-auto pb-8"
+      style="display: none"
+    >
+      <h1 class="text-[#080808b3] font-semibold text-xl mt-7 mb-4">Cash Out</h1>
+      <form action="#" class="bg-white rounded-2xl p-8">
+        <div class="">
+          <label class="font-semibold text-[#080808b3]" for="">
+            Agent Number</label
+          >
+          <br />
+          <input
+            id="account-number"
+            type="text"
+            placeholder="Enter 11 digit number"
+            class="input bg-[#F4F5F7] mt-3 rounded-3xl w-full p-6"
+          />
+        </div>
+
+        <div class="mt-5">
+          <label class="font-semibold text-[#080808b3]" for=""> Amount</label>
+          <br />
+          <input
+            id="add-amount"
+            type="text"
+            placeholder="Enter amount to withdraw"
+            class="input bg-[#F4F5F7] mt-3 rounded-3xl w-full p-6"
+          />
+        </div>
+
+        <div class="mt-5">
+          <label class="font-semibold text-[#080808b3]" for="">
+            Pin Number</label
+          >
+          <br />
+          <input
+            id="add-pin"
+            type="text"
+            placeholder="Enter 4 digit pin number"
+            class="input bg-[#F4F5F7] mt-3 rounded-3xl w-full p-6"
+          />
+        </div>
+
+        <button
+          type="button"
+          id="add-money-btn"
+          class="btn bg-[#0874F2] mt-5 w-full text-white rounded-3xl py-6 text-[17px]"
+        >
+          Withdraw Money
+        </button>
+      </form>
+    </div>
+
+    <!-- Transfer Money -->
+
+    <div
+      id="cashOutSection"
+      class="all-form-section max-w-lg mx-auto pb-8"
+      style="display: non"
+    >
+      <h1 class="text-[#080808b3] font-semibold text-xl mt-7 mb-4">
+        Transfer Money
+      </h1>
+      <form action="#" class="bg-white rounded-2xl p-8">
+        <div class="">
+          <label class="font-semibold text-[#080808b3]" for="">
+            User Account Number</label
+          >
+          <br />
+          <input
+            id="account-number"
+            type="text"
+            placeholder="Enter 11 digit number"
+            class="input bg-[#F4F5F7] mt-3 rounded-3xl w-full p-6"
+          />
+        </div>
+
+        <div class="mt-5">
+          <label class="font-semibold text-[#080808b3]" for="">Amount</label>
+          <br />
+          <input
+            id="add-amount"
+            type="text"
+            placeholder="Enter amount to Transfer"
+            class="input bg-[#F4F5F7] mt-3 rounded-3xl w-full p-6"
+          />
+        </div>
+
+        <div class="mt-5">
+          <label class="font-semibold text-[#080808b3]" for="">
+            Pin Number</label
+          >
+          <br />
+          <input
+            id="add-pin"
+            type="text"
+            placeholder="Enter 4 digit pin number"
+            class="input bg-[#F4F5F7] mt-3 rounded-3xl w-full p-6"
+          />
+        </div>
+
+        <button
+          type="button"
+          id="add-money-btn"
+          class="btn bg-[#0874F2] mt-5 w-full text-white rounded-3xl py-6 text-[17px]"
+        >
+          Send Money
+        </button>
+      </form>
+    </div>
+
+    <!-- Get Bonus -->
+
+    <div
+      id="cashOutSection"
+      class="all-form-section max-w-lg mx-auto pb-8"
+      style="display: non"
+    >
+      <h1 class="text-[#080808b3] font-semibold text-xl mt-7 mb-4">
+        Get Bonus
+      </h1>
+      <form action="#" class="bg-white rounded-2xl p-8">
+        <div class="">
+          <label class="font-semibold text-[#080808b3]" for="">
+            Enter Bonus Coupon</label
+          >
+          <br />
+          <input
+            id="account-number"
+            type="text"
+            placeholder="Enter your coupon"
+            class="input bg-[#F4F5F7] mt-3 rounded-3xl w-full p-6"
+          />
+        </div>
+        <button
+          type="button"
+          id="add-money-btn"
+          class="btn bg-[#0874F2] mt-5 w-full text-white rounded-3xl py-6 text-[17px]"
+        >
+          Get Bonus
+        </button>
+      </form>
+    </div>
+
+    <!-- Pay Bill -->
+
+    <div
+      id="addMoneySection"
+      class="all-form-section max-w-lg mx-auto pb-8"
+      style="display: non"
+    >
       <h1 class="text-[#080808b3] font-semibold text-xl mt-7 mb-4">
         Add Money
       </h1>
