@@ -24,7 +24,7 @@
       referrerpolicy="no-referrer"
     />
   </head>
-  <body class="bg-[#F4F5F7] min-h-screen">
+  <body class="bg-[#F4F5F7] min-h-screen pb-8 overflow-y-scroll">
     <div class="max-w-lg mx-auto bg-white rounded-b-2xl">
       <!-- Header Section -->
 
@@ -78,24 +78,28 @@
           <h2 class="mt-2 text-center">Cash Out</h2>
         </div>
         <div
+          id="transferMoneyBtn"
           class="border-1 border-gray-300 p-4 flex flex-col justify-center items-center rounded-xl text-[#080808b3] hover:cursor-pointer hover:scale-104 transition-transform duration-300 hover:bg-green-100"
         >
           <img class="mx-auto" src="./assets/money1.png" alt="" />
           <h2 class="mt-2 text-center">Transfer Money</h2>
         </div>
         <div
+          id="getBonusBtn"
           class="border-1 border-gray-300 p-7 rounded-xl text-[#080808b3] hover:cursor-pointer hover:scale-104 transition-transform duration-300 hover:bg-green-100"
         >
           <img class="mx-auto" src="./assets/bonus1.png" alt="" />
           <h2 class="mt-2 text-center">Get Bonus</h2>
         </div>
         <div
+          id="payBillBtn"
           class="border-1 border-gray-300 p-7 rounded-xl text-[#080808b3] hover:cursor-pointer hover:scale-104 transition-transform duration-300 hover:bg-green-100"
         >
           <img class="mx-auto" src="./assets/purse1.png" alt="" />
           <h2 class="mt-2 text-center">Pay Bill</h2>
         </div>
         <div
+          id="transactionsBtn"
           class="border-1 border-gray-300 p-7 rounded-xl text-[#080808b3] hover:cursor-pointer hover:scale-104 transition-transform duration-300 hover:bg-green-100"
         >
           <img class="mx-auto" src="./assets/transaction1.png" alt="" />
@@ -108,7 +112,7 @@
 
     <div
       id="addMoneySection"
-      class="all-form-section max-w-lg mx-auto pb-8"
+      class="all-form-section max-w-lg mx-auto"
       style="display: none"
     >
       <h1 class="text-[#080808b3] font-semibold text-xl mt-7 mb-4">
@@ -182,7 +186,7 @@
 
     <div
       id="cashOutSection"
-      class="all-form-section max-w-lg mx-auto pb-8"
+      class="all-form-section max-w-lg mx-auto"
       style="display: none"
     >
       <h1 class="text-[#080808b3] font-semibold text-xl mt-7 mb-4">Cash Out</h1>
@@ -193,7 +197,7 @@
           >
           <br />
           <input
-            id="account-number"
+            id="agent-number"
             type="text"
             placeholder="Enter 11 digit number"
             class="input bg-[#F4F5F7] mt-3 rounded-3xl w-full p-6"
@@ -204,7 +208,7 @@
           <label class="font-semibold text-[#080808b3]" for=""> Amount</label>
           <br />
           <input
-            id="add-amount"
+            id="withdraw-amount"
             type="text"
             placeholder="Enter amount to withdraw"
             class="input bg-[#F4F5F7] mt-3 rounded-3xl w-full p-6"
@@ -217,7 +221,7 @@
           >
           <br />
           <input
-            id="add-pin"
+            id="withdraw-pin"
             type="text"
             placeholder="Enter 4 digit pin number"
             class="input bg-[#F4F5F7] mt-3 rounded-3xl w-full p-6"
@@ -226,7 +230,7 @@
 
         <button
           type="button"
-          id="add-money-btn"
+          id="cashOut-money-btn"
           class="btn bg-[#0874F2] mt-5 w-full text-white rounded-3xl py-6 text-[17px]"
         >
           Withdraw Money
@@ -237,9 +241,9 @@
     <!-- Transfer Money -->
 
     <div
-      id="cashOutSection"
-      class="all-form-section max-w-lg mx-auto pb-8"
-      style="display: non"
+      id="transferMoneySection"
+      class="all-form-section max-w-lg mx-auto"
+      style="display: none"
     >
       <h1 class="text-[#080808b3] font-semibold text-xl mt-7 mb-4">
         Transfer Money
@@ -251,7 +255,7 @@
           >
           <br />
           <input
-            id="account-number"
+            id="transfer-account-number"
             type="text"
             placeholder="Enter 11 digit number"
             class="input bg-[#F4F5F7] mt-3 rounded-3xl w-full p-6"
@@ -262,7 +266,7 @@
           <label class="font-semibold text-[#080808b3]" for="">Amount</label>
           <br />
           <input
-            id="add-amount"
+            id="transfer-amount"
             type="text"
             placeholder="Enter amount to Transfer"
             class="input bg-[#F4F5F7] mt-3 rounded-3xl w-full p-6"
@@ -275,7 +279,7 @@
           >
           <br />
           <input
-            id="add-pin"
+            id="transfer-pin"
             type="text"
             placeholder="Enter 4 digit pin number"
             class="input bg-[#F4F5F7] mt-3 rounded-3xl w-full p-6"
@@ -284,7 +288,7 @@
 
         <button
           type="button"
-          id="add-money-btn"
+          id="transfer-money-btn"
           class="btn bg-[#0874F2] mt-5 w-full text-white rounded-3xl py-6 text-[17px]"
         >
           Send Money
@@ -295,9 +299,9 @@
     <!-- Get Bonus -->
 
     <div
-      id="cashOutSection"
-      class="all-form-section max-w-lg mx-auto pb-8"
-      style="display: non"
+      id="getBonusSection"
+      class="all-form-section max-w-lg mx-auto"
+      style="display: none"
     >
       <h1 class="text-[#080808b3] font-semibold text-xl mt-7 mb-4">
         Get Bonus
@@ -328,16 +332,14 @@
     <!-- Pay Bill -->
 
     <div
-      id="addMoneySection"
-      class="all-form-section max-w-lg mx-auto pb-8"
-      style="display: non"
+      id="payBillSection"
+      class="all-form-section max-w-lg mx-auto"
+      style="display: none"
     >
-      <h1 class="text-[#080808b3] font-semibold text-xl mt-7 mb-4">
-        Add Money
-      </h1>
+      <h1 class="text-[#080808b3] font-semibold text-xl mt-7 mb-4">Pay Bill</h1>
       <form action="#" class="bg-white rounded-2xl p-8">
         <div>
-          <h1 class="font-semibold text-[#080808b3]">Select A Bank</h1>
+          <h1 class="font-semibold text-[#080808b3]">Select To Pay</h1>
           <select
             id="bank"
             class="select rounded-3xl w-full text-gray-500 mt-3 h-12.5 pl-6 bg-[#F4F5F7]"
@@ -352,26 +354,26 @@
 
         <div class="mt-5">
           <label class="font-semibold text-[#080808b3]" for="">
-            Bank Account Number</label
+            Biller Account Number</label
           >
           <br />
           <input
             id="account-number"
             type="text"
-            placeholder="Enter 11 digit account number"
+            placeholder="Enter account number"
             class="input bg-[#F4F5F7] mt-3 rounded-3xl w-full p-6"
           />
         </div>
 
         <div class="mt-5">
           <label class="font-semibold text-[#080808b3]" for="">
-            Amount to Add</label
+            Amount to pay</label
           >
           <br />
           <input
             id="add-amount"
             type="text"
-            placeholder="Add Amount to withdraw"
+            placeholder="Add Amount to pay"
             class="input bg-[#F4F5F7] mt-3 rounded-3xl w-full p-6"
           />
         </div>
@@ -394,7 +396,36 @@
           id="add-money-btn"
           class="btn bg-[#0874F2] mt-5 w-full text-white rounded-3xl py-6 text-[17px]"
         >
-          Add Money
+          Pay Now
+        </button>
+      </form>
+    </div>
+
+    <!-- Transactions -->
+
+    <div id="transactionsSection" class="all-form-section max-w-lg mx-auto">
+      <h1 class="text-[#080808b3] font-semibold text-xl mt-7 mb-4">
+        Get Bonus
+      </h1>
+      <form action="#" class="bg-white rounded-2xl p-8">
+        <div class="">
+          <label class="font-semibold text-[#080808b3]" for="">
+            Enter Bonus Coupon</label
+          >
+          <br />
+          <input
+            id="account-number"
+            type="text"
+            placeholder="Enter your coupon"
+            class="input bg-[#F4F5F7] mt-3 rounded-3xl w-full p-6"
+          />
+        </div>
+        <button
+          type="button"
+          id="add-money-btn"
+          class="btn bg-[#0874F2] mt-5 w-full text-white rounded-3xl py-6 text-[17px]"
+        >
+          Get Bonus
         </button>
       </form>
     </div>
