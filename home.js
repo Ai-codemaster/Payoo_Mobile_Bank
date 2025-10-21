@@ -70,7 +70,9 @@ document
   .getElementById('transfer-money-btn')
   .addEventListener('click', function (e) {
     e.preventDefault();
-    const transferAccountNumber = document.getElementById('transfer-account-number').value;
+    const transferAccountNumber = document.getElementById(
+      'transfer-account-number'
+    ).value;
     const transferAmount = parseInt(
       document.getElementById('transfer-amount').value
     );
@@ -175,3 +177,10 @@ document
 
     document.getElementById('transactionsSection').style.display = 'block';
   });
+
+// Logout Button
+
+document.getElementById('logOutButton').addEventListener('click', function (e) {
+  e.preventDefault();
+  window.location.href = './index.html';
+});
