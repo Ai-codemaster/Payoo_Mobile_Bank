@@ -1,3 +1,20 @@
+// Reusable Function
+
+function getInputValueNumber(id) {
+  const inputValueNumber = parseInt(document.getElementById(id).value);
+  return inputValueNumber;
+}
+
+function getInputValue(id) {
+  const inputValue = document.getElementById(id).value;
+  return inputValue;
+}
+
+function getInputText(id) {
+  const inputValueText = parseInt(document.getElementById(id).innerText);
+  return inputValueText;
+}
+
 // Add Money Section Feature
 
 document
