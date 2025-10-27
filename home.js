@@ -48,14 +48,10 @@ document
   .getElementById('cashOut-money-btn')
   .addEventListener('click', function (e) {
     e.preventDefault();
-    const agentNumber = document.getElementById('agent-number').value;
-    const withdrawAmount = parseInt(
-      document.getElementById('withdraw-amount').value
-    );
-    const withdrawPin = parseInt(document.getElementById('withdraw-pin').value);
-    const availableBalance = parseInt(
-      document.getElementById('available-balance').innerText
-    );
+    const agentNumber = getInputValue('agent-number');
+    const withdrawAmount = getInputValueNumber('withdraw-amount');
+    const withdrawPin = getInputValueNumber('withdraw-pin');
+    const availableBalance = getInputText('available-balance');
 
     if (agentNumber.length !== 11) {
       alert('Please Provide A Valid Number');
@@ -84,16 +80,10 @@ document
   .getElementById('transfer-money-btn')
   .addEventListener('click', function (e) {
     e.preventDefault();
-    const transferAccountNumber = document.getElementById(
-      'transfer-account-number'
-    ).value;
-    const transferAmount = parseInt(
-      document.getElementById('transfer-amount').value
-    );
-    const transferPin = parseInt(document.getElementById('transfer-pin').value);
-    const availableBalance = parseInt(
-      document.getElementById('available-balance').innerText
-    );
+    const transferAccountNumber = getInputValue('transfer-account-number');
+    const transferAmount = getInputValueNumber('transfer-amount');
+    const transferPin = getInputValueNumber('transfer-pin');
+    const availableBalance = getInputText('available-balance');
 
     if (transferAccountNumber.length !== 11) {
       alert('Please Provide A Valid Number');
