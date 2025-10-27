@@ -57,8 +57,12 @@ const sectionBtn = [
 function showColorBtn(btnId) {
   for (const id of sectionBtn) {
     const sectionButton = document.getElementById(id);
-    if (id === btnId){
-      
+    if (id === btnId) {
+      sectionButton.classList.add('border-blue-400', 'bg-blue-100');
+      sectionButton.classList.remove('border-gray-300', 'hover:bg-green-100');
+    } else {
+      sectionButton.classList.remove('border-blue-400', 'bg-blue-100');
+      sectionButton.classList.add('border-gray-300', 'hover:bg-green-100');
     }
   }
 }
@@ -158,12 +162,14 @@ document
 
 document.getElementById('addMoneyBtn').addEventListener('click', function () {
   showSection('addMoneySection');
+  showColorBtn('addMoneyBtn');
 });
 
 // Cash Out Button Event Handler
 
 document.getElementById('cashOutBtn').addEventListener('click', function () {
   showSection('cashOutSection');
+  showColorBtn('cashOutBtn');
 });
 
 // Transfer Money Button Event Handler
@@ -172,18 +178,21 @@ document
   .getElementById('transferMoneyBtn')
   .addEventListener('click', function () {
     showSection('transferMoneySection');
+    showColorBtn('transferMoneyBtn');
   });
 
 // Get Bonus Button Event Handler
 
 document.getElementById('getBonusBtn').addEventListener('click', function () {
   showSection('getBonusSection');
+  showColorBtn('getBonusBtn');
 });
 
 // Pay Bill Button Event Handler
 
 document.getElementById('payBillBtn').addEventListener('click', function () {
   showSection('payBillSection');
+  showColorBtn('payBillBtn');
 });
 
 // Transactions Button Event Handler
@@ -192,6 +201,7 @@ document
   .getElementById('transactionsBtn')
   .addEventListener('click', function () {
     showSection('transactionsSection');
+    showColorBtn('transactionsBtn');
   });
 
 // Logout Button
