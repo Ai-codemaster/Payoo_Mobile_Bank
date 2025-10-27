@@ -1,18 +1,66 @@
 // Reusable Function
 
+// Get Input Value ParseInt()
+
 function getInputValueNumber(id) {
   const inputValueNumber = parseInt(document.getElementById(id).value);
   return inputValueNumber;
 }
+
+// Get Input Value
 
 function getInputValue(id) {
   const inputValue = document.getElementById(id).value;
   return inputValue;
 }
 
+// Get InnerText ParseInt()
+
 function getInputText(id) {
   const inputValueText = parseInt(document.getElementById(id).innerText);
   return inputValueText;
+}
+
+// Section Show Reusable Function
+
+const sections = [
+  'addMoneySection',
+  'cashOutSection',
+  'transferMoneySection',
+  'getBonusSection',
+  'payBillSection',
+  'transactionsSection',
+];
+
+function showSection(sectionId) {
+  for (const id of sections) {
+    const section = document.getElementById(id);
+    if (id === sectionId) {
+      section.style.display = 'block';
+    } else {
+      section.style.display = 'none';
+    }
+  }
+}
+
+// Section Button BG Color Change Reusable Function
+
+const sectionBtn = [
+  'addMoneyBtn',
+  'cashOutBtn',
+  'transferMoneyBtn',
+  'getBonusBtn',
+  'payBillBtn',
+  'transactionsBtn',
+];
+
+function showColorBtn(btnId) {
+  for (const id of sectionBtn) {
+    const sectionButton = document.getElementById(id);
+    if (id === btnId){
+      
+    }
+  }
 }
 
 // Add Money Section Feature
@@ -109,25 +157,13 @@ document
 // Add Money Button Event Handler
 
 document.getElementById('addMoneyBtn').addEventListener('click', function () {
-  document.getElementById('cashOutSection').style.display = 'none';
-  document.getElementById('transferMoneySection').style.display = 'none';
-  document.getElementById('getBonusSection').style.display = 'none';
-  document.getElementById('payBillSection').style.display = 'none';
-  document.getElementById('transactionsSection').style.display = 'none';
-
-  document.getElementById('addMoneySection').style.display = 'block';
+  showSection('addMoneySection');
 });
 
 // Cash Out Button Event Handler
 
 document.getElementById('cashOutBtn').addEventListener('click', function () {
-  document.getElementById('addMoneySection').style.display = 'none';
-  document.getElementById('transferMoneySection').style.display = 'none';
-  document.getElementById('getBonusSection').style.display = 'none';
-  document.getElementById('payBillSection').style.display = 'none';
-  document.getElementById('transactionsSection').style.display = 'none';
-
-  document.getElementById('cashOutSection').style.display = 'block';
+  showSection('cashOutSection');
 });
 
 // Transfer Money Button Event Handler
@@ -135,37 +171,19 @@ document.getElementById('cashOutBtn').addEventListener('click', function () {
 document
   .getElementById('transferMoneyBtn')
   .addEventListener('click', function () {
-    document.getElementById('addMoneySection').style.display = 'none';
-    document.getElementById('cashOutSection').style.display = 'none';
-    document.getElementById('getBonusSection').style.display = 'none';
-    document.getElementById('payBillSection').style.display = 'none';
-    document.getElementById('transactionsSection').style.display = 'none';
-
-    document.getElementById('transferMoneySection').style.display = 'block';
+    showSection('transferMoneySection');
   });
 
 // Get Bonus Button Event Handler
 
 document.getElementById('getBonusBtn').addEventListener('click', function () {
-  document.getElementById('addMoneySection').style.display = 'none';
-  document.getElementById('cashOutSection').style.display = 'none';
-  document.getElementById('transferMoneySection').style.display = 'none';
-  document.getElementById('payBillSection').style.display = 'none';
-  document.getElementById('transactionsSection').style.display = 'none';
-
-  document.getElementById('getBonusSection').style.display = 'block';
+  showSection('getBonusSection');
 });
 
 // Pay Bill Button Event Handler
 
 document.getElementById('payBillBtn').addEventListener('click', function () {
-  document.getElementById('addMoneySection').style.display = 'none';
-  document.getElementById('cashOutSection').style.display = 'none';
-  document.getElementById('transferMoneySection').style.display = 'none';
-  document.getElementById('getBonusSection').style.display = 'none';
-  document.getElementById('transactionsSection').style.display = 'none';
-
-  document.getElementById('payBillSection').style.display = 'block';
+  showSection('payBillSection');
 });
 
 // Transactions Button Event Handler
@@ -173,13 +191,7 @@ document.getElementById('payBillBtn').addEventListener('click', function () {
 document
   .getElementById('transactionsBtn')
   .addEventListener('click', function () {
-    document.getElementById('addMoneySection').style.display = 'none';
-    document.getElementById('cashOutSection').style.display = 'none';
-    document.getElementById('transferMoneySection').style.display = 'none';
-    document.getElementById('getBonusSection').style.display = 'none';
-    document.getElementById('payBillSection').style.display = 'none';
-
-    document.getElementById('transactionsSection').style.display = 'block';
+    showSection('transactionsSection');
   });
 
 // Logout Button
