@@ -168,6 +168,39 @@ document
       totalNewAvailableBalance;
   });
 
+// Get Bonus Section Feature
+
+document
+  .getElementById('get-bonus-btn')
+  .addEventListener('click', function (e) {
+    e.preventDefault();
+    const getCouponValue = getInputValue('getBonusCoupon');
+    const availableBalance = getInputText('available-balance');
+
+    const coupon1 = 'Ashraful@12';
+    const coupon2 = 'Ashraful@13';
+    const coupon3 = 'Ashraful@14';
+
+    console.log(coupon1, coupon2, coupon3, getCouponValue);
+
+    if (
+      getCouponValue !== coupon1 &&
+      getCouponValue !== coupon2 &&
+      getCouponValue !== coupon3
+    ) {
+      alert('Your Coupon Code Is Invalid, Please Provide Valid Coupon Code');
+    } else if (getCouponValue === coupon1) {
+      document.getElementById('available-balance').innerText =
+        availableBalance + 1000;
+    } else if (getCouponValue === coupon2) {
+      document.getElementById('available-balance').innerText =
+        availableBalance + 2000;
+    } else if (getCouponValue === coupon3) {
+      document.getElementById('available-balance').innerText =
+        availableBalance + 3000;
+    }
+  });
+
 // Add Money Button Event Handler
 
 document.getElementById('addMoneyBtn').addEventListener('click', function () {
@@ -230,7 +263,7 @@ document
             </div>
             <div class="text-[#080808b3]">
               <h1 class="font-semibold">${data.name}</h1>
-              <p class="text-sm font-mono">${data.date}</p>
+              <p class="text-sm font-mono">Today ${data.date}</p>
             </div>
           </div>
           <div>
