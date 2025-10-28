@@ -1,3 +1,5 @@
+const transactionData = [];
+
 // Reusable Function
 
 // Get Input Value ParseInt()
@@ -92,6 +94,14 @@ document
 
     document.getElementById('available-balance').innerText =
       totalNewAvailableBalance;
+
+    const data = {
+      name: 'Add Money',
+      date: new Date().toLocaleTimeString(),
+    };
+    transactionData.push(data);
+
+    console.log(transactionData);
   });
 
 // Cash Out Section Feature
@@ -202,6 +212,35 @@ document
   .addEventListener('click', function () {
     showSection('transactionsSection');
     showColorBtn('transactionsBtn');
+
+    const transactionContainer = document.getElementById(
+      'transactionContainer'
+    );
+    transactionContainer.innerText = '';
+
+    for (const data of transactionData) {
+      const div = document.createElement('div');
+      div.innerHTML = `
+      <div
+          class="flex items-center justify-between bg-white p-3 rounded-2xl border-1 border-gray-300 mt-2 mx-2"
+        >
+          <div class="flex items-center gap-3">
+            <div class="p-3 bg-[#F4F5F7] rounded-full">
+              <img src="./assets/wallet1.png" alt="" />
+            </div>
+            <div class="text-[#080808b3]">
+              <h1 class="font-semibold">${data.name}</h1>
+              <p class="text-sm font-mono">${data.date}</p>
+            </div>
+          </div>
+          <div>
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+          </div>
+        </div>
+      `;
+
+      transactionContainer.appendChild(div);
+    }
   });
 
 // Logout Button
