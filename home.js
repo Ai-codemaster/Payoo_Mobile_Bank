@@ -96,7 +96,7 @@ document
       totalNewAvailableBalance;
 
     const data = {
-      name: `Add Money ${amount}$`,
+      name: `Add Money ${-amount}$`,
       date: new Date().toLocaleTimeString(),
       type: getImgSrc('addMoney'),
     };
@@ -135,7 +135,7 @@ document
       totalNewAvailableBalance;
 
     const data = {
-      name: 'Cash Out',
+      name: `Cash Out ${-withdrawAmount}$`,
       date: new Date().toLocaleTimeString(),
       type: getImgSrc('cashOut'),
     };
@@ -174,7 +174,7 @@ document
       totalNewAvailableBalance;
 
     const data = {
-      name: 'Transfer Money',
+      name: `Transfer Money ${-transferAmount}$`,
       date: new Date().toLocaleTimeString(),
       type: getImgSrc('transferMoney'),
     };
@@ -194,7 +194,7 @@ document
     const coupon2 = 'Ashraful@13';
     const coupon3 = 'Ashraful@14';
 
-    console.log(coupon1, coupon2, coupon3, getCouponValue);
+    let bonusAmount = 0;
 
     if (
       getCouponValue !== coupon1 &&
@@ -202,19 +202,20 @@ document
       getCouponValue !== coupon3
     ) {
       alert('Your Coupon Code Is Invalid, Please Provide Valid Coupon Code');
+      return;
     } else if (getCouponValue === coupon1) {
-      document.getElementById('available-balance').innerText =
-        availableBalance + 1000;
+      bonusAmount = 1000;
     } else if (getCouponValue === coupon2) {
-      document.getElementById('available-balance').innerText =
-        availableBalance + 2000;
+      bonusAmount = 2000;
     } else if (getCouponValue === coupon3) {
-      document.getElementById('available-balance').innerText =
-        availableBalance + 3000;
+      bonusAmount = 3000;
     }
 
+    document.getElementById('available-balance').innerText =
+      availableBalance + bonusAmount;
+
     const data = {
-      name: 'Get Bonus',
+      name: `Get Bonus ${-bonusAmount}$`,
       date: new Date().toLocaleTimeString(),
       type: getImgSrc('getBonus'),
     };
@@ -246,7 +247,7 @@ document.getElementById('pay-bill-btn').addEventListener('click', function (e) {
     totalNewAvailableBalance;
 
   const data = {
-    name: sectionValue,
+    name: `${sectionValue} - ${payBillAmount}$`,
     date: new Date().toLocaleTimeString(),
     type: getImgSrc('payBill'),
   };
