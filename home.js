@@ -96,12 +96,11 @@ document
       totalNewAvailableBalance;
 
     const data = {
-      name: 'Add Money',
+      name: `Add Money ${amount}$`,
       date: new Date().toLocaleTimeString(),
+      type: getImgSrc('addMoney'),
     };
     transactionData.push(data);
-
-    console.log(transactionData);
   });
 
 // Cash Out Section Feature
@@ -134,6 +133,13 @@ document
 
     document.getElementById('available-balance').innerText =
       totalNewAvailableBalance;
+
+    const data = {
+      name: 'Cash Out',
+      date: new Date().toLocaleTimeString(),
+      type: getImgSrc('cashOut'),
+    };
+    transactionData.push(data);
   });
 
 // Transfer Money Section Feature
@@ -166,6 +172,13 @@ document
 
     document.getElementById('available-balance').innerText =
       totalNewAvailableBalance;
+
+    const data = {
+      name: 'Transfer Money',
+      date: new Date().toLocaleTimeString(),
+      type: getImgSrc('transferMoney'),
+    };
+    transactionData.push(data);
   });
 
 // Get Bonus Section Feature
@@ -199,6 +212,13 @@ document
       document.getElementById('available-balance').innerText =
         availableBalance + 3000;
     }
+
+    const data = {
+      name: 'Get Bonus',
+      date: new Date().toLocaleTimeString(),
+      type: getImgSrc('getBonus'),
+    };
+    transactionData.push(data);
   });
 
 // Pay Bill Section Feature
@@ -224,6 +244,13 @@ document.getElementById('pay-bill-btn').addEventListener('click', function (e) {
 
   document.getElementById('available-balance').innerText =
     totalNewAvailableBalance;
+
+  const data = {
+    name: sectionValue,
+    date: new Date().toLocaleTimeString(),
+    type: getImgSrc('payBill'),
+  };
+  transactionData.push(data);
 });
 
 // Add Money Button Event Handler
@@ -263,6 +290,24 @@ document.getElementById('payBillBtn').addEventListener('click', function () {
   showColorBtn('payBillBtn');
 });
 
+// Transactions History Image
+
+function getImgSrc(type) {
+  if (type === 'addMoney') {
+    return './assets/wallet1.png';
+  } else if (type === 'cashOut') {
+    return './assets/send1.png';
+  } else if (type === 'transferMoney') {
+    return './assets/money1.png';
+  } else if (type === 'getBonus') {
+    return './assets/bonus1.png';
+  } else if (type === 'payBill') {
+    return './assets/purse1.png';
+  } else {
+    return './assets/transaction1.png';
+  }
+}
+
 // Transactions Button Event Handler
 
 document
@@ -284,7 +329,7 @@ document
         >
           <div class="flex items-center gap-3">
             <div class="p-3 bg-[#F4F5F7] rounded-full">
-              <img src="./assets/wallet1.png" alt="" />
+              <img src="${data.type}" alt="" />
             </div>
             <div class="text-[#080808b3]">
               <h1 class="font-semibold">${data.name}</h1>
