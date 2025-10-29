@@ -201,6 +201,31 @@ document
     }
   });
 
+// Pay Bill Section Feature
+
+document.getElementById('pay-bill-btn').addEventListener('click', function (e) {
+  e.preventDefault(e);
+  const sectionValue = getInputValue('organization');
+  const payBillAccountNumber = getInputValue('pay-bill-account-number');
+  const payBillAmount = getInputValueNumber('pay-bill-amount');
+  const payBillPinNumber = getInputValueNumber('pay-bill-pin');
+  const availableBalance = getInputText('available-balance');
+
+  if (payBillAccountNumber.length !== 11) {
+    alert('Please Provide Valid Account Number');
+    return;
+  }
+  if (payBillPinNumber !== 1234) {
+    alert('Invalid Pin Number');
+    return;
+  }
+
+  const totalNewAvailableBalance = availableBalance - payBillAmount;
+
+  document.getElementById('available-balance').innerText =
+    totalNewAvailableBalance;
+});
+
 // Add Money Button Event Handler
 
 document.getElementById('addMoneyBtn').addEventListener('click', function () {
